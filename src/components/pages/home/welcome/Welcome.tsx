@@ -84,7 +84,7 @@ const Welcome = () => {
               <div key={item.id} className={scss.slide}>
                 <h3>{item.genre || "Жанр не указан"}</h3>
                 <h1>{item.title || "Без названия"}</h1>
-                <h3>{item.date || "Дата не указана"}</h3>
+                <h3>{item.date.slice(5, 10) || "Дата не указана"}</h3>
                 <button>Толук маалымат алуу</button>
               </div>
             ))}

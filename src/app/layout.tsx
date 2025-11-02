@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
-import { Noto_Sans } from "next/font/google";
+import { Roboto, Scada, Onest } from "next/font/google";
 import "./globals.scss";
 
-const notoSans = Noto_Sans({
-  variable: "--font-noto_sans",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
+});
+const onest = Onest({
+  variable: "--font-onest",
+  subsets: ["latin"],
+});
+const scada = Scada({
+  weight: ["400", "700"],
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-scada",
 });
 
 export const metadata: Metadata = {
@@ -19,7 +28,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${notoSans.variable}`}>{children}</body>
+      <body
+        className={`${roboto.variable} ${scada.variable} ${onest.variable}`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
