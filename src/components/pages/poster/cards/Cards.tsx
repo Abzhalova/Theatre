@@ -2,12 +2,24 @@
 import { FC, useState } from "react";
 import scss from "./Cards.module.scss";
 import Image from "next/image";
+import { MdLocationOn, MdOutlineCalendarMonth } from "react-icons/md";
+import { IoPricetagsSharp } from "react-icons/io5";
+import { BsTicketPerforatedFill } from "react-icons/bs";
+
+interface IDate {
+  month: string;
+  time: string;
+  day: string;
+}
 
 interface IData {
   id: number;
   img: string;
   title: string;
   category: string;
+  price: number;
+  address: string;
+  info: IDate[];
 }
 
 const Cards: FC = () => {
@@ -17,30 +29,15 @@ const Cards: FC = () => {
       img: "https://sputnik.kg/img/103469/24/1034692483_0:0:1566:2048_600x0_80_0_0_b255304384f64800068e8f7b7024e808.jpg",
       title: "Жамила",
       category: "Спектаклдер",
-    },
-    {
-      id: 2,
-      img: "https://sputnik.kg/img/103469/24/1034692483_0:0:1566:2048_600x0_80_0_0_b255304384f64800068e8f7b7024e808.jpg",
-      title: "Концерт А",
-      category: "Концерттер",
-    },
-    {
-      id: 3,
-      img: "https://sputnik.kg/img/103469/24/1034692483_0:0:1566:2048_600x0_80_0_0_b255304384f64800068e8f7b7024e808.jpg",
-      title: "Балдар шоу",
-      category: "Балдар үчүн",
-    },
-    {
-      id: 4,
-      img: "https://sputnik.kg/img/103469/24/1034692483_0:0:1566:2048_600x0_80_0_0_b255304384f64800068e8f7b7024e808.jpg",
-      title: "Семинар",
-      category: "Семинарлар",
-    },
-    {
-      id: 5,
-      img: "https://sputnik.kg/img/103469/24/1034692483_0:0:1566:2048_600x0_80_0_0_b255304384f64800068e8f7b7024e808.jpg",
-      title: "Спектакль B",
-      category: "Спектаклдер",
+      price: 200,
+      address: "Драм Талас Театр",
+      info: [
+        {
+          month: "Авг",
+          time: "12:00",
+          day: "12",
+        },
+      ],
     },
   ];
 
@@ -80,12 +77,52 @@ const Cards: FC = () => {
                   <Image
                     src={el.img}
                     alt={el.title}
-                    width={300}
+                    width={200}
                     height={200}
-                    style={{ borderRadius: "10px", objectFit: "cover" }}
+                    style={{ objectFit: "cover" }}
                   />
                 </div>
                 <h3>{el.title}</h3>
+                <hr />
+                <div className={scss.date}>
+                  <MdOutlineCalendarMonth
+                    style={{
+                      color: "var(--clr-grey)",
+                    }}
+                  />
+                  <p
+                    style={{
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    {el.info.map((item) => item.day + " ")}
+                    {el.info.map((item) => item.month + " - ")}
+                    {el.info.map((item) => item.day + " " + item.month)}
+                  </p>
+                </div>
+                <div className={scss.date}>
+                  <IoPricetagsSharp
+                    style={{
+                      color: "var(--clr-grey)",
+                    }}
+                  />
+
+                  <p>{el.price} сом</p>
+                </div>
+                <div className={scss.date}>
+                  <MdLocationOn
+                    style={{
+                      color: "var(--clr-grey)",
+                    }}
+                  />
+
+                  <p>{el.address}</p>
+                </div>
+                <div className={scss.ticket}>
+                  <h4>
+                    <BsTicketPerforatedFill />
+                  </h4>
+                </div>
               </div>
             ))}
           </div>
