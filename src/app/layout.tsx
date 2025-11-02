@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Noto_Sans } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.scss";
 
-const notoSans = Noto_Sans({
-  variable: "--font-noto_sans",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
 });
 
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${notoSans.variable}`}>{children}</body>
+      <body className={`${roboto.variable}`}>{children}</body>
     </html>
   );
 }

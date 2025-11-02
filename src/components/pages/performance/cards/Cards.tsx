@@ -60,7 +60,7 @@ const Cards: FC = () => {
                       src={el.image}
                       alt={el.title || "Спектакль"}
                       fill
-                      style={{ objectFit: "cover", borderRadius: "10px" }}
+                      style={{ objectFit: "cover" }}
                     />
                   ) : (
                     <Image
@@ -70,7 +70,7 @@ const Cards: FC = () => {
                       src="/notImage.png"
                       alt={el.title || "Спектакль"}
                       fill
-                      style={{ objectFit: "cover", borderRadius: "10px" }}
+                      style={{ objectFit: "cover" }}
                     />
                   )}
                 </div>
