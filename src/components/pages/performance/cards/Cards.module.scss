@@ -1,6 +1,5 @@
 .Cards {
   padding: 60px 0;
-  background: #f9f9f9;
 
   .content {
     display: flex;
@@ -23,19 +22,11 @@
     }
 
     .card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       overflow: hidden;
       transition: all 0.3s ease;
       cursor: pointer;
       display: flex;
       flex-direction: column;
-
-      &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
-      }
 
       .imageWrapper {
         position: relative;

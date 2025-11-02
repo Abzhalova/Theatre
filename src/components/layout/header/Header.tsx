@@ -29,7 +29,7 @@ const Header: FC = () => {
           <nav className={scss.nav}>
             <nav className={scss.links}>
               <p>
-                Касса: <span>+996 500 800 907</span>
+                КАССА: <span>+996 500 800 907</span>
               </p>
               <a target="_blank" rel="noopener noreferrer" href="#">
                 <FaFacebookF />
@@ -65,7 +65,7 @@ const Header: FC = () => {
                 href="/talasTheatre"
                 className={pathname === "/talasTheatre" ? scss.active : ""}
               >
-                Талас театыры
+                Талас театры
               </Link>
               <Link
                 href="/team"
@@ -120,7 +120,7 @@ const Header: FC = () => {
                 href="/talasTheatre"
                 className={pathname === "/talasTheatre" ? scss.active : ""}
               >
-                Талас театыры
+                Талас театры
               </Link>
               <Link
                 onClick={() => setOpen(false)}
@@ -145,7 +145,7 @@ const Header: FC = () => {
               </Link>
             </nav>
             <p>
-              Касса: <span>+996 500 800 907</span>
+              КАССА: <span>+996 500 800 907</span>
             </p>
             <nav className={scss.links}>
               <a target="_blank" rel="noopener noreferrer" href="#">

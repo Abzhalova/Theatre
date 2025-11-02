@@ -39,7 +39,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      gap: 5px;
+      gap: 15px;
 
       .links {
         display: flex;
@@ -54,14 +54,15 @@
           span {
             cursor: pointer;
             font-weight: 600;
-          }
-
-          &:hover {
-            transform: translateX(-3px);
+            transition: 0.2s ease-in-out;
+            &:hover {
+              color: var(--clr-brown);
+            }
           }
         }
 
         a {
+          cursor: pointer;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -70,8 +71,7 @@
           transition: 0.2s ease-in-out;
 
           &:hover {
-            transform: translateY(-3px);
-            color: var(--clr-red);
+            color: var(--clr-brown);
           }
         }
       }
@@ -82,11 +82,13 @@
         gap: 20px;
 
         a {
-          font-size: 16px;
+          cursor: pointer;
+          font-size: 14px;
           color: black;
           font-weight: 500;
           position: relative;
           transition: color 0.3s ease-in-out;
+          text-transform: uppercase;
 
           &::after {
             content: "";
@@ -96,13 +98,13 @@
             width: 100%;
             border-radius: 50px;
             left: 0;
-            background: black;
+            background: var(--clr-brown);
             transition: 0.3s ease-in-out;
             transform: scaleX(0);
           }
 
           &:hover {
-            color: #d31e1e;
+            color: var(--clr-brown);
           }
 
           &:hover::after,
@@ -136,10 +138,9 @@
     top: 105px;
     right: -400px;
     padding: 25px 20px;
-    width: 300px;
+    width: 260px;
     background: white;
     z-index: 105;
-    border-radius: 12px 0 0 12px;
 
     .nav {
       display: flex;
@@ -188,6 +189,7 @@
           font-weight: 500;
           position: relative;
           transition: color 0.3s ease-in-out;
+          text-transform: uppercase;
 
           &::after {
             content: "";
